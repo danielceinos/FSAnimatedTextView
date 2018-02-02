@@ -25,3 +25,22 @@
 	        compile 'com.github.danielceinos:FSAnimatedTextView:v1.0.2'
 	}
   ```
+# Use
+
+```xml
+  <com.fireshield.animatedtextview.FSAnimatedTV
+      android:id="@+id/tv_number"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:textSize="50sp"
+      app:textColor="@color/colorPrimary"
+      />
+```
+
+```kotlin
+	findViewById<FSAnimatedTV>(R.id.tv_number).setNum(1337)
+```
+
+```kotlin
+	findViewById<FSAnimatedTV>(R.id.tv_number).setText(hey!)
+```
