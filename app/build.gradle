@@ -4,20 +4,8 @@ apply plugin: 'kotlin-android-extensions'
 
 repositories {
     jcenter()
-    maven { url "https://jitpack.io" }
 }
 
-buildscript {
-    repositories {
-        mavenCentral()
-        jcenter()
-        maven { url "https://jitpack.io" }
-    }
-
-    dependencies {
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
-    }
-}
 android {
     compileSdkVersion 26
     defaultConfig {
@@ -37,7 +25,6 @@ android {
 }
 
 dependencies {
-    compile 'com.github.jitpack:gradle-simple:1.0'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:26.1.0'
