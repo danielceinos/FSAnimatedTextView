@@ -3,7 +3,9 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/danielceinos/FSAnimatedTextView/blob/master/LICENSE.md)
 [![Version](https://img.shields.io/badge/jitpack-1.0.3-green.svg)](https://jitpack.io/#danielceinos/FSAnimatedTextView/v1.0.3)
 
-![FSAnimatedTextView](example1.gif)
+<p align="center">
+	<img src="https://github.com/danielceinos/FSAnimatedTextView/blob/develop/example1.gif" />
+</p>
 
 # Requirements
 
@@ -42,5 +44,5 @@
 ```
 
 ```kotlin
-	findViewById<FSAnimatedTV>(R.id.tv_number).setText(hey!)
+	findViewById<FSAnimatedTV>(R.id.tv_number).setText("hey!")
 ```
