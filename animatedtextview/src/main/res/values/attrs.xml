@@ -3,5 +3,6 @@
   <declare-styleable name="FSAnimatedTV">
     <attr name="textSize" format="dimension"/>
     <attr name="textColor" format="color"/>
+    <attr name="duration" format="integer"/>
   </declare-styleable>
 </resources>

@@ -2,6 +2,7 @@ package com.fireshield.fsanimatedtextview
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.animation.BounceInterpolator
 import android.widget.Button
 import com.fireshield.animatedtextview.FSAnimatedTV
 import java.util.*
