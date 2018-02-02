@@ -4,7 +4,7 @@
 [![Version](https://img.shields.io/badge/jitpack-1.0.3-green.svg)](https://jitpack.io/#danielceinos/FSAnimatedTextView/v1.0.3)
 
 <p align="center">
-	![FSAnimatedTextView](example1.gif)
+	<img src="https://github.com/danielceinos/FSAnimatedTextView/blob/develop/example1.gif" />
 </p>
 
 # Requirements
