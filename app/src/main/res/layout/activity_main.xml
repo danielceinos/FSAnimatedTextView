@@ -26,8 +26,6 @@
       android:id="@+id/b_more"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginBottom="8dp"
-      android:layout_marginEnd="8dp"
       android:text="+"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
@@ -37,10 +35,26 @@
       android:id="@+id/b_less"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginBottom="8dp"
-      android:layout_marginStart="8dp"
       android:text="-"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintStart_toStartOf="parent"
+      />
+
+  <Button
+      android:id="@+id/b_more10"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="+10"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/b_less"
+      />
+
+  <Button
+      android:id="@+id/b_less10"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="-10"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toStartOf="@+id/b_more"
       />
 </android.support.constraint.ConstraintLayout>
