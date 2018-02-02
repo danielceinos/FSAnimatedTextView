@@ -1,11 +1,11 @@
 package com.fireshield.animatedtextview
 
 import android.content.Context
+import android.graphics.Color
 import android.util.AttributeSet
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
-import android.view.animation.Interpolator
 import android.widget.FrameLayout
 import android.widget.TextView
 
@@ -27,6 +27,15 @@ class FSAnimatedTV(context: Context?, attrs: AttributeSet?) : FrameLayout(contex
     initialize(context!!)
     outAnim = AnimationUtils.loadAnimation(this.context, R.anim.trans_out)
     inAnim = AnimationUtils.loadAnimation(this.context, R.anim.trans_in)
+    val ta = context.obtainStyledAttributes(attrs, R.styleable.FSAnimatedTV, 0, 0)
+    val dimension = ta.getDimension(R.styleable.FSAnimatedTV_textSize,40F)
+    val color = ta.getColor(R.styleable.FSAnimatedTV_textColor, Color.BLACK)
+
+    val text = findViewById<TextView>(R.id.fs_number)
+    text.textSize = dimension
+    text.setTextColor(color)
+
+    ta.recycle()
   }
 
   fun setNum(num: Int) {
@@ -51,6 +60,28 @@ class FSAnimatedTV(context: Context?, attrs: AttributeSet?) : FrameLayout(contex
       override fun onAnimationRepeat(arg0: Animation) {}
       override fun onAnimationEnd(arg0: Animation) {
         text.text = num.toString()
+        text.startAnimation(inAnim)
+      }
+    })
+    text.startAnimation(outAnim)
+  }
+
+  fun setText(newText: String) {
+    outAnim.cancel()
+    inAnim.cancel()
+
+    outAnim = AnimationUtils.loadAnimation(this.context, R.anim.trans_out)
+    inAnim = AnimationUtils.loadAnimation(this.context, R.anim.trans_in)
+
+    outAnim.interpolator = AccelerateDecelerateInterpolator()
+    inAnim.interpolator = AccelerateDecelerateInterpolator()
+
+    val text = findViewById<TextView>(R.id.fs_number)
+    outAnim.setAnimationListener(object : Animation.AnimationListener {
+      override fun onAnimationStart(arg0: Animation) {}
+      override fun onAnimationRepeat(arg0: Animation) {}
+      override fun onAnimationEnd(arg0: Animation) {
+        text.text = newText
         text.startAnimation(inAnim)
       }
     })
