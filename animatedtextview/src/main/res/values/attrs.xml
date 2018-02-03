@@ -4,5 +4,6 @@
     <attr name="textSize" format="dimension"/>
     <attr name="textColor" format="color"/>
     <attr name="duration" format="integer"/>
+    <attr name="colorFeedback" format="boolean"/>
   </declare-styleable>
 </resources>

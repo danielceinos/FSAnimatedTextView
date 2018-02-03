@@ -1,9 +1,15 @@
 package com.fireshield.animatedtextview
 
+import android.animation.ArgbEvaluator
+import android.animation.ValueAnimator
+import android.animation.ValueAnimator.REVERSE
 import android.content.Context
 import android.graphics.Color
 import android.util.AttributeSet
-import android.view.animation.*
+import android.view.animation.AccelerateDecelerateInterpolator
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
+import android.view.animation.Interpolator
 import android.widget.FrameLayout
 import android.widget.TextView
 
@@ -18,9 +24,11 @@ class FSAnimatedTV(context: Context?, attrs: AttributeSet?) : FrameLayout(contex
   private var value: Int = 0
   private var outAnim: Animation
   private var inAnim: Animation
+  val color: Int
   val duration: Long
-  var outInterpolator: Interpolator = AccelerateDecelerateInterpolator()
-  var inInterpolator: Interpolator = AccelerateDecelerateInterpolator()
+  val outInterpolator: Interpolator = AccelerateDecelerateInterpolator()
+  val inInterpolator: Interpolator = AccelerateDecelerateInterpolator()
+  val colorFeedback: Boolean
 
   private fun initialize(context: Context) {
     inflate(context, R.layout.animated_tv, this)
@@ -33,8 +41,9 @@ class FSAnimatedTV(context: Context?, attrs: AttributeSet?) : FrameLayout(contex
 
     val ta = context.obtainStyledAttributes(attrs, R.styleable.FSAnimatedTV, 0, 0)
     val dimension = ta.getDimension(R.styleable.FSAnimatedTV_textSize, 40F)
-    val color = ta.getColor(R.styleable.FSAnimatedTV_textColor, Color.BLACK)
+    color = ta.getColor(R.styleable.FSAnimatedTV_textColor, Color.BLACK)
     duration = ta.getInt(R.styleable.FSAnimatedTV_duration, 300).toLong()
+    colorFeedback = ta.getBoolean(R.styleable.FSAnimatedTV_colorFeedback, false)
 
     val text = findViewById<TextView>(R.id.fs_number)
     text.textSize = dimension
@@ -84,6 +93,23 @@ class FSAnimatedTV(context: Context?, attrs: AttributeSet?) : FrameLayout(contex
         text.startAnimation(inAnim)
       }
     })
+    if (colorFeedback)
+      colorAnimate(direction)
     text.startAnimation(outAnim)
+  }
+
+  private fun colorAnimate(direction: DIRECTION) {
+    val colorTo: Int = when (direction) {
+      FSAnimatedTV.DIRECTION.UPWARDS -> Color.GREEN
+      FSAnimatedTV.DIRECTION.DOWNWARDS -> Color.RED
+    }
+    val text = findViewById<TextView>(R.id.fs_number)
+    val colorAnimation = ValueAnimator.ofObject(ArgbEvaluator(), color, colorTo)
+    colorAnimation.duration = duration * 2
+    colorAnimation.interpolator = AccelerateDecelerateInterpolator()
+    colorAnimation.addUpdateListener { animator -> text.setTextColor(animator.animatedValue as Int) }
+    colorAnimation.repeatMode = REVERSE
+    colorAnimation.repeatCount = 1
+    colorAnimation.start()
   }
 }
