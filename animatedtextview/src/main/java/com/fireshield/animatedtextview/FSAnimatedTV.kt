@@ -52,6 +52,14 @@ class FSAnimatedTV(context: Context?, attrs: AttributeSet?) : FrameLayout(contex
     ta.recycle()
   }
 
+  fun increment(by: Int) {
+    setNum(value + by)
+  }
+
+  fun decrement(by: Int) {
+    setNum(value - by)
+  }
+
   fun setNum(num: Int) {
     if (num > value) {
       animate(num.toString(), DIRECTION.UPWARDS)

@@ -11,6 +11,7 @@
       android:text="0"
       android:textColor="#000"
       android:textSize="26sp"
+      android:maxLines="1"
       />
 
 </RelativeLayout>
