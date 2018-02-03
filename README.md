@@ -1,7 +1,7 @@
 # FSAnimatedTextView
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/danielceinos/FSAnimatedTextView/blob/master/LICENSE.md)
-[![Version](https://img.shields.io/badge/jitpack-1.0.3-green.svg)](https://jitpack.io/#danielceinos/FSAnimatedTextView/v1.0.3)
+[![Version](https://img.shields.io/badge/jitpack-1.0.4-green.svg)](https://jitpack.io/#danielceinos/FSAnimatedTextView/1.0.4)
 
 <p align="center">
 	<img src="https://github.com/danielceinos/FSAnimatedTextView/blob/develop/example1.gif" />
@@ -24,7 +24,7 @@
   ```
   ```
   dependencies {
-	        compile 'com.github.danielceinos:FSAnimatedTextView:v1.0.3'
+	        compile 'com.github.danielceinos:FSAnimatedTextView:1.0.4'
 	}
   ```
 # Use
