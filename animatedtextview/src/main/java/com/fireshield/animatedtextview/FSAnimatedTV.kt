@@ -24,11 +24,11 @@ class FSAnimatedTV(context: Context?, attrs: AttributeSet?) : FrameLayout(contex
   private var value: Int = 0
   private var outAnim: Animation
   private var inAnim: Animation
-  val color: Int
-  val duration: Long
-  val outInterpolator: Interpolator = AccelerateDecelerateInterpolator()
-  val inInterpolator: Interpolator = AccelerateDecelerateInterpolator()
-  val colorFeedback: Boolean
+  var color: Int
+  var duration: Long
+  var outInterpolator: Interpolator = AccelerateDecelerateInterpolator()
+  var inInterpolator: Interpolator = AccelerateDecelerateInterpolator()
+  var colorFeedback: Boolean
 
   private fun initialize(context: Context) {
     inflate(context, R.layout.animated_tv, this)

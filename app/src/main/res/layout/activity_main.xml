@@ -18,7 +18,7 @@
       app:layout_constraintTop_toTopOf="parent"
       app:textSize="50sp"
       app:textColor="@color/colorPrimary"
-      app:duration="250"
+      app:duration="200"
       />
 
   <Button

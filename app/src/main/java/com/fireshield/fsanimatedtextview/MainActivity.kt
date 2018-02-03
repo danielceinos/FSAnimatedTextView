@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
 
+    findViewById<FSAnimatedTV>(R.id.tv_number).colorFeedback = true
     findViewById<Button>(R.id.b_more).setOnClickListener { findViewById<FSAnimatedTV>(R.id.tv_number).setNum(++num) }
     findViewById<Button>(R.id.b_less).setOnClickListener { findViewById<FSAnimatedTV>(R.id.tv_number).setNum(--num) }
     findViewById<Button>(R.id.b_more10).setOnClickListener {
