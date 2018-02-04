@@ -4,6 +4,11 @@
     <attr name="textSize" format="dimension"/>
     <attr name="textColor" format="color"/>
     <attr name="duration" format="integer"/>
+    <attr name="leftDrawable" format="reference"/>
+    <attr name="leftDrawableHeight" format="dimension"/>
+    <attr name="leftDrawableWidth" format="dimension"/>
+    <attr name="leftDrawableSize" format="dimension"/>
+    <attr name="leftDrawableTint" format="color"/>
     <attr name="colorFeedback" format="boolean"/>
   </declare-styleable>
 </resources>
