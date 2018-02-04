@@ -11,7 +11,7 @@
 
   <android.support.constraint.ConstraintLayout
       android:layout_width="match_parent"
-      android:layout_height="200dp"
+      android:layout_height="250dp"
       android:layout_margin="10dp"
       android:layout_marginEnd="8dp"
       android:layout_marginStart="8dp"
@@ -57,7 +57,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="No no no no no no, stop this, it's not a plot point, heterosexuals get to heterosex-it without it being "
+        android:text="@string/tweet_body_example"
         android:textColor="#f5f5f5"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/ll_tweet_info"
