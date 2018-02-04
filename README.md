@@ -31,6 +31,7 @@
 
 ## Options
 
+```xml
     <attr name="textSize" format="dimension"/>
     <attr name="textColor" format="color"/>
     <attr name="duration" format="integer"/>
@@ -40,6 +41,7 @@
     <attr name="leftDrawableSize" format="dimension"/>
     <attr name="leftDrawableTint" format="color"/>
     <attr name="colorFeedback" format="boolean"/>
+```
 
 ## Example
 
@@ -69,9 +71,9 @@
 ```
 
 ```kotlin
-	 findViewById<FSAnimatedTV>(R.id.tv_like).increment(1)
+	findViewById<FSAnimatedTV>(R.id.tv_like).increment(1)
 ```
      
 ```kotlin
-	 findViewById<FSAnimatedTV>(R.id.tv_like).decrement(6)
+	findViewById<FSAnimatedTV>(R.id.tv_like).decrement(6)
 ```
