@@ -4,67 +4,125 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#212121"
     tools:context="com.fireshield.fsanimatedtextview.MainActivity"
     tools:layout_editor_absoluteY="81dp"
     >
 
-  <com.fireshield.animatedtextview.FSAnimatedTV
-      android:id="@+id/tv_number"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:textSize="50sp"
-      app:textColor="@color/colorPrimary"
-      app:duration="250"
-      />
-
-  <Button
-      android:id="@+id/b_more"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="+"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      />
-
-  <Button
-      android:id="@+id/b_less"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="-"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      />
-
-  <Button
-      android:id="@+id/b_more10"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="+10"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintStart_toEndOf="@+id/b_less"
-      />
-
-  <Button
-      android:id="@+id/b_random_text"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
+  <android.support.constraint.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="250dp"
+      android:layout_margin="10dp"
+      android:layout_marginEnd="8dp"
       android:layout_marginStart="8dp"
       android:layout_marginTop="8dp"
-      android:text="random text"
+      android:background="#424242"
+      app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      />
+      >
 
-  <Button
-      android:id="@+id/b_less10"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="-10"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toStartOf="@+id/b_more"
-      />
+    <ImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/avatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:text="DayoScript"
+        android:textColor="#FFF"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintStart_toEndOf="@+id/iv_avatar"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tweet_body_example"
+        android:textColor="#f5f5f5"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/ll_tweet_info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_avatar"
+        />
+
+    <LinearLayout
+        android:id="@+id/ll_tweet_info"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+
+      <com.fireshield.animatedtextview.FSAnimatedTV
+          android:id="@+id/tv_coment"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="6dp"
+          android:layout_weight="1"
+          app:colorFeedback="true"
+          app:duration="200"
+          app:leftDrawable="@drawable/ic_chat_bubble"
+          app:leftDrawableSize="20dp"
+          app:leftDrawableTint="#FFF"
+          app:textColor="#FFF"
+          app:textSize="16sp"
+          />
+
+      <com.fireshield.animatedtextview.FSAnimatedTV
+          android:id="@+id/tv_retweet"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="6dp"
+          android:layout_weight="1"
+          app:colorFeedback="true"
+          app:duration="200"
+          app:leftDrawable="@drawable/ic_cached"
+          app:leftDrawableSize="20dp"
+          app:leftDrawableTint="#FFF"
+          app:textColor="#FFF"
+          app:textSize="16sp"
+          />
+
+      <com.fireshield.animatedtextview.FSAnimatedTV
+          android:id="@+id/tv_like"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="6dp"
+          android:layout_weight="1"
+          app:colorFeedback="true"
+          app:duration="200"
+          app:leftDrawable="@drawable/ic_favorite_border"
+          app:leftDrawableSize="20dp"
+          app:leftDrawableTint="#FFF"
+          app:textColor="#FFF"
+          app:textSize="16sp"
+          />
+    </LinearLayout>
+  </android.support.constraint.ConstraintLayout>
+
 </android.support.constraint.ConstraintLayout>
